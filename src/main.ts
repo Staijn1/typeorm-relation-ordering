@@ -48,7 +48,7 @@ class Service {
         const findManyOptions: FindManyOptions<Product> = {
             relations: {productType: true},  // Relations, in combination with order, is throwing an SQLite error.
             select: ['id'],
-            take: 1,
+            take: 1, // all issues disappear when you remove this line
             where: [{deleted: false}],
             order: {
                 // when you delete this line, or the relations line, the query will work.
